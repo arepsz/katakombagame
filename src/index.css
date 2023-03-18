@@ -616,13 +616,3 @@ img {
     float: right;
   }
 }
-
-@media screen and (max-height: 1919px) {
-  #background {
-    display: none;
-  }
-  .allDivs {
-    transform: scale(0.7);
-    right: 100%;
-  }
-}
