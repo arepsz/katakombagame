@@ -611,8 +611,20 @@ class Board extends React.Component {
   checkIfWin() {
     for(let i = 0; i < this.state.howManyPlayers; i++){
       if(this.state.players[i].howManyTreasures === this.state.howManyPrizes / this.state.howManyPlayers && this.state.players[i].pLocation === this.state.players[i].home){
-        alert("Vége a játéknak, nyert a kék (1.) játékos!");
-        this.resetGame();
+        confirmAlert({
+          title: 'Nyert a ' + this.state.players[i].id + 1 + ". játékos!",
+          message: 'Kiléphet a kezdőoldalra, vagy újrakezdheti a játékot a meglévő beállításokkal.',
+          buttons: [
+            {
+              label: 'Kezdőoldal',
+              onClick: () => window.location.reload(false)
+            },
+            {
+              label: 'Újrakezdés',
+              onClick: () => this.resetGame()
+            }
+          ]
+        });
       }
     }
   }
@@ -1086,10 +1098,10 @@ class Board extends React.Component {
         )
       );
     }
-    let row = <tr className="playerTr"> {playerTds} </tr>
+    let row = <tr> {playerTds} </tr>
     
     return (
-      <table>
+      <table className="playerTable">
         <tbody>
           {row}
         </tbody>
