@@ -1,13 +1,526 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: gray;
+  position: relative;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.no-spacing {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid black;
+  transform: scale(0.8);
+}
+
+.tileOutTable {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0;
+  border: 0px;
+}
+
+tr {
+  padding-bottom: 0px;
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.topnav {
+  background-color: rgb(61, 61, 61);
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+.topnav #exit {
+  background-color:rgb(225, 128, 128);
+  color: black;
+  margin-right: 0px;
+}
+
+.topnav #exit:hover {
+  background-color:rgb(225, 128, 128);
+  color: white;
+}
+
+.topnav a:hover {
+  background-color: gray;
+  color: black;
+}
+
+.topnav #description {
+  float: left;
+}
+
+.Player p {
+  background: #a98e49;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+
+.home0 {
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  background: #800020;
+  opacity: 50%;
+  border: 1px solid black;
+}
+
+.home1 {
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  background: #0096FF;
+  opacity: 50%;
+  border: 1px solid black;
+}
+
+.home2 {
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  background: #32CD32;
+  opacity: 50%;
+  border: 1px solid black;
+}
+
+.home3 {
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  background: #9932CC;
+  opacity: 50%;
+  border: 1px solid black;
+}
+
+.Tile{
+  position: relative;
+}
+
+.treasure0 {
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  opacity: 50%;
+  border: 1px solid black;
+  background: #800020;
+}
+
+.treasure1 {
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  opacity: 50%;
+  border: 1px solid black;
+  background: #0096FF;
+}
+
+.treasure2 {
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  opacity: 50%;
+  border: 1px solid black;
+  background: #32CD32;
+}
+
+.treasure3 {
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  opacity: 50%;
+  border: 1px solid black;
+  background: #9932CC;
+}
+
+.playerSquare0 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+  border: 2px solid #800020;
+}
+
+.playerSquare1 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+  border: 2px solid #0096FF;
+}
+
+.playerSquare2 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+  border: 2px solid #32CD32;
+}
+
+.playerSquare3 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+  border: 2px solid #9932CC;
+}
+
+.position1-0 {
+  top: 31%;
+  left: 31%;
+}
+
+.position2-0 {
+  top: 10%;
+  left: 10%;
+}
+
+.position2-1 {
+  top: 10%;
+  left: 55%;
+}
+
+.position3-0 {
+  top: 10%;
+  left: 10%;
+}
+.position3-1 {
+  top: 10%;
+  left: 55%;
+}
+
+.position3-2 {
+  top: 55%;
+  left: 10%;
+}
+
+.position4-0 {
+  top: 10%;
+  left: 10%;
+}
+
+.position4-1 {
+  top: 10%;
+  left: 55%;
+}
+
+.position4-2 {
+  top: 55%;
+  left: 10%;
+}
+
+.position4-3 {
+  top: 55%;
+  left: 55%;
+}
+
+.allDivs {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.out_and_players {
+  display: block;
+}
+
+.highlighted img {
+  filter: hue-rotate(90deg);
+}
+
+.highlightedPlayer img {
+  box-shadow: 0 0 10px #333;
+  transform: scale(1.05);
+  transition: all .2s ease-in-out;
+}
+
+.react-confirm-alert-overlay {
+  background: rgba(128, 128, 128, 0.9) !important;
+}
+
+.react-confirm-alert-body {
+  background: rgb(60, 60, 60) !important;
+  color: rgb(194, 194, 194) !important;
+  animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards !important;
+}
+
+.react-confirm-alert-button-group button {
+  background: rgb(101, 101, 101) !important;
+}
+
+.react-confirm-alert-button-group button:hover {
+  background: rgb(164, 164, 164) !important;
+}
+
+.custom-ui {
+  width: 75%;
+  text-align: justify;
+  margin: auto;
+  background: rgb(60, 60, 60);
+  color: rgb(194, 194, 194);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.13);
+  overflow: scroll;
+}
+
+.custom-ui button {
+  outline: none;
+  background: rgb(101, 101, 101);
+  border: none;
+  display: inline-block;
+  padding: 6px 18px;
+  color: #eee;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.custom-ui button:hover {
+  background: rgb(164, 164, 164) !important;
+}
+
+.custom-ui h1 {
+  margin-top: 0;
+}
+
+.custom-slider {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 15px;
+  margin-top: 9%;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #a98e49;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #a98e49;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.hideElements {
+  display: none;
+  margin-left: -500px;
+}
+
+.options {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.start_buttons {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.frontButton{
+  outline: none;
+  background: #a98e49;
+  opacity: 0.7;
+  border: none;
+  display: inline-block;
+  padding: 10px 26px;
+  color: #eee;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.frontButton:hover {
+  background: #caaa58;
+}
+
+.slider {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.value_box {
+  outline: none;
+  background: #a98e49;
+  opacity: 0.7;
+  border: none;
+  display: inline-block;
+  padding: 6px 16px;
+  color: #eee;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 15px;
+  margin-left: 5px;
+}
+
+.links {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#middle {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#start_button {
+  margin-left: 2px;
+}
+
+#title {
+  text-align: center;
+  font-family: cursive;
+  font-size: 9vh;
+  margin-bottom: 0;
+}
+
+#selfpromo {
+  text-align: center;
+  font-family: cursive;
+  margin-top: 0;
+}
+
+#choose {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  color:#fff;
+  background-color: #a98e49;
+  opacity: 0.7;
+  width:15px;
+  height:15px;
+  border-radius:100%;
+  font-size:10px;
+  text-decoration:none;
+  position: relative;
+  -webkit-box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.25);
+  box-shadow: inset -1px -1px 1px 0px rgba(0,0,0,0.25);
+}
+
+#choose:hover {
+  background: #caaa58;
+  cursor: pointer;
+}
+
+#choose #tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+#choose #tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+#choose:hover #tooltiptext {
+  visibility: visible;
+}
+
+#background {
+  position: absolute;
+  z-index: -5;
+  width: 99.3vw;
+  opacity: 0.3;
+  top: 49%;
+}
+
+
+
+/*@media screen and (max-width: 600px) {
+  .allDivs {
+    transform: scale(0.5);
+    right: 100%;
+  }
+  .topNav {
+    transform: scale(0.5);
+  }
+}*/
