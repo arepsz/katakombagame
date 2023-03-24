@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
 body {
   background: gray;
   position: relative;
@@ -322,7 +324,33 @@ img {
   overflow: scroll;
 }
 
+.custom-ui-register {
+  width: 85%;
+  text-align: justify;
+  margin: auto;
+  background: rgb(60, 60, 60);
+  color: rgb(194, 194, 194);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.13);
+  overflow: scroll;
+}
+
 .custom-ui button {
+  outline: none;
+  background: rgb(101, 101, 101);
+  border: none;
+  display: inline-block;
+  padding: 6px 18px;
+  color: #eee;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.custom-ui-register button {
   outline: none;
   background: rgb(101, 101, 101);
   border: none;
@@ -440,6 +468,66 @@ img {
   opacity: 0.6;
 }
 
+.register {
+  display: grid;
+  text-align: justify;
+  padding: 15px;
+  margin-left: 5px;
+}
+
+.login_field {
+  padding: 10px 0px;
+  display: flex;
+  position: relative;
+  width: 85%;
+}
+
+.register input {
+  border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+  padding-left: 24px;
+  color: white
+}
+
+.custom-ui-register h1 {
+  text-align: center;
+}
+
+.register-images {
+  max-width: 20px;
+  max-height: 20px;
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 2px;
+}
+
+.register button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 93%;
+}
+
+.custom-ui-register-button {
+  background: rgb(225, 128, 128) !important;
+  color: black !important;
+}
+
+.custom-ui-register-button:hover {
+  background: rgb(225, 128, 128) !important;
+  color: white !important;
+}
+
+.register-button {
+  background: #caaa58 !important;
+  color: black !important;
+}
+
+.register-button:hover {
+  color: white !important;
+}
+
 #middle {
   margin-left: 5px;
   margin-right: 5px;
@@ -551,12 +639,8 @@ img {
 
   .react-confirm-alert {
     transform: scale(0.8);
-    overflow-x: scroll !important;
-  }
-
-  .custom-ui {
-    margin-top: 900px;
-    overflow: scroll !important;
+    overflow-y: scroll !important;
+    max-height: 100% !important;
   }
 
   .topnav a{
@@ -596,11 +680,8 @@ img {
 
   .react-confirm-alert {
     transform: scale(0.8);
-    overflow-x: scroll !important;
-  }
-
-  .custom-ui {
-    margin-top: 900px;
+    overflow-y: scroll !important;
+    max-height: 100% !important;
   }
 
   .topnav a{
