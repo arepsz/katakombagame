@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import axios from 'axios';
 import Register from './components/register.js';
 import Board from './components/gamelogic.js';
+import Login from './components/login.js'
 
 class Game extends React.Component {
   constructor(props){
@@ -139,7 +139,7 @@ class Game extends React.Component {
       <div className={"topnav " + this.pickingCSS("board")}>
           <a id="exit" class="active" href="#home" onClick={() => this.refreshPage()}>Kilépés</a>
           <a href="#signup" onClick={() => this.renderRegister()}>Regisztráció</a>
-          <a href="#login">Bejelentkezés</a>
+          <a href="#login" onClick={() => this.renderLogin()}>Bejelentkezés</a>
           <a href="#save">Mentés</a>
           <a id="description" href="#description" onClick={() => this.toggleDescription()}>Játék leírása</a>
         </div>
@@ -153,6 +153,20 @@ class Game extends React.Component {
           <div className='custom-ui-register'>
             <h1>Regisztráció</h1>
             <Register/>
+            <button onClick={onClose} className="custom-ui-register-button">Vissza</button>
+          </div>
+        );
+      }
+    });
+  }
+
+  renderLogin() {
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <div className='custom-ui-register'>
+            <h1>Bejelentkezés</h1>
+            <Login/>
             <button onClick={onClose} className="custom-ui-register-button">Vissza</button>
           </div>
         );

@@ -6,28 +6,18 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
 
-class Register extends React.Component {
+class Login extends React.Component {
     constructor(props) {
       super(props);
-      this.onChangeName= this.onChangeName.bind(this);
       this.onChangeEmail= this.onChangeEmail.bind(this);
       this.onChangePassword= this.onChangePassword.bind(this);
-      this.onChangePasswordconfirm= this.onChangePasswordconfirm.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
       this.state = {
-        name: "",
         email: "",
         password: "",
-        passwordConfirm: "",
         success: false,
         loggedInUser: ""
       }
-    }
-  
-    onChangeName(e){
-      this.setState({
-        name: e.target.value
-      });
     }
      
     onChangeEmail(e){
@@ -41,17 +31,11 @@ class Register extends React.Component {
         password: e.target.value
       });
     }
-     
-    onChangePasswordconfirm(e){
-      this.setState({
-        passwordConfirm:  e.target.value
-      });
-    }
 
   
     onSubmit(e){
       console.log("pressed");
-      e.preventDefault();
+      /*e.preventDefault();
       
       const obj = {
         username: this.state.name,
@@ -64,22 +48,13 @@ class Register extends React.Component {
       .catch(error => {
         console.log(error.response)
       
-      }).finally(console.log("asd"))
+      }).finally(console.log("asd"))*/
     }
   
     render(){
       return (
         <div className="register" >
             <div className="signupText"></div>
-              <div className="login_field">
-                <FontAwesomeIcon icon={faUser} className="register-images"/>
-                <input 
-                  type="text"
-                  value={this.state.name} 
-                  onChange={this.onChangeName}
-                  placeholder="Név">
-                </input>
-              </div>
               
               <div className="login_field">
                 <FontAwesomeIcon icon={faEnvelope} className="register-images"/>
@@ -100,22 +75,12 @@ class Register extends React.Component {
                   placeholder="Jelszó">
                 </input>
               </div>
-              
-              <div className="login_field">
-                <FontAwesomeIcon icon={faLock} className="register-images"/>
-                <input 
-                  type="password"
-                  value={this.state.passwordConfirm} 
-                  onChange={this.onChangePasswordconfirm}
-                  placeholder="Jelszó ismét">
-                </input>
-              </div>
 
-            <button className='register-button' onClick={this.onSubmit}>Regisztrálok</button>
+            <button className='register-button' onClick={this.onSubmit}>Bejelentkezek</button>
         </div>
       );
     }
       
   }
 
-export default Register;
+export default Login;
