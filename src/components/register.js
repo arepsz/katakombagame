@@ -20,7 +20,8 @@ class Register extends React.Component {
         password: "",
         passwordConfirm: "",
         success: false,
-        loggedInUser: ""
+        showMessage: false,
+        error: ""
       }
     }
   
@@ -48,28 +49,53 @@ class Register extends React.Component {
       });
     }
 
+    handleStatus(json) {
+      let error = "";
+      let success = false;
+      if(json['status'] === 400) {
+        success = true;
+      }else if(json['status'] === 404){
+        error = json['fail'];
+      }
+      this.setState({
+        success: success,
+        error: error,
+        showMessage: true,
+        password: "",
+        passwordConfirm: ""
+      });
+    }
   
     onSubmit(e){
-      console.log("pressed");
       e.preventDefault();
-      
       const obj = {
         username: this.state.name,
         email:  this.state.email,
         password: this.state.password,
         passwordConfirm:  this.state.passwordConfirm
       }
-      axios.post('http://localhost:8000/insert.php', obj)
-      .then(res=> console.log(res.data))
+      axios.post('http://localhost:8000/register.php', obj)
+      .then(res=> this.handleStatus(res.data))
       .catch(error => {
         console.log(error.response)
-      
-      }).finally(console.log("asd"))
+      })
     }
   
     render(){
       return (
         <div className="register" >
+            {this.state.showMessage ?
+            <p className={this.state.success ? "register-message-green" : "register-message-red"}>{this.state.success ? "Sikeres" : "Sikertelen"} regisztráció</p> :
+            ''}
+            {this.state.error === "Duplicate" ?
+            <p className="error-message-red">Már létezik felhasználó <br></br> ilyen felhasználó</p> :
+            ''}
+            {this.state.error === "Email" ?
+            <p className="error-message-red">Hibás emailt adott meg</p> :
+            ''}
+            {this.state.error === "Password" ?
+            <p className="error-message-red">Hibás jelszót adott meg</p> :
+            ''}
             <div className="signupText"></div>
               <div className="login_field">
                 <FontAwesomeIcon icon={faUser} className="register-images"/>
@@ -77,7 +103,8 @@ class Register extends React.Component {
                   type="text"
                   value={this.state.name} 
                   onChange={this.onChangeName}
-                  placeholder="Név">
+                  placeholder="Név"
+                  className={this.state.error === "Name" ? "register-input-red" : ""}>
                 </input>
               </div>
               
@@ -87,7 +114,8 @@ class Register extends React.Component {
                   type="text"
                   value={this.state.email} 
                   onChange={this.onChangeEmail}
-                  placeholder="Email">
+                  placeholder="Email"
+                  className={this.state.error === "Email" ? "register-input-red" : ""}>
                 </input>
               </div>
               
@@ -97,7 +125,8 @@ class Register extends React.Component {
                   type="password"
                   value={this.state.password} 
                   onChange={this.onChangePassword}
-                  placeholder="Jelszó">
+                  placeholder="Jelszó"
+                  className={this.state.error === "Password" ? "register-input-red" : ""}>
                 </input>
               </div>
               
@@ -107,7 +136,8 @@ class Register extends React.Component {
                   type="password"
                   value={this.state.passwordConfirm} 
                   onChange={this.onChangePasswordconfirm}
-                  placeholder="Jelszó ismét">
+                  placeholder="Jelszó ismét"
+                  className={this.state.error === "Password" ? "register-input-red" : ""}>
                 </input>
               </div>
 

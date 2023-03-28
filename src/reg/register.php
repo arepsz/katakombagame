@@ -8,36 +8,36 @@ ini_set('display_errors', 1);
 $users = new Storage(new JsonIO('data/userdata.json'));
  
 $request = json_decode(file_get_contents("php://input"),true);
-$fail_name = "";
+$fail = "";
 
 $name = $request['username'];
 $email = $request['email'];
 $password = $request['password'];
 $passwordConfirm = $request['passwordConfirm'];
 
-if(validateName($name) && validateEmail($email) && validatePassword($password) && !(userExists($users,$request))){
+if(validateName($name) && validateEmail($email) && validatePassword($password, $passwordConfirm) && !(userExists($users,$request))){
     echo json_encode([
         'status' => 400,
-        'message' => 'Login successful' 
+        'message' => 'Register successful' 
     ]);
     $save = [
         'name' => $name,
         'email' => $email,
-        'password' => $password
+        'password' => password_hash($password, PASSWORD_DEFAULT)
     ];
     $users->add($save);
-    print_r("Addolva");
 }else{
     echo json_encode([
-        'status' => 400,
-        'message' => 'Login fail',
-        'fail' => $fail_name
+        'status' => 404,
+        'message' => 'Register fail',
+        'fail' => $fail
     ]);
 }
 
 function validateName($name){
     if($name == null || $name == ""){
-        $fail_name = "Name";
+        global $fail;
+        $fail = "Name";
         return false;
     }else{
         return true;
@@ -46,16 +46,18 @@ function validateName($name){
 
 function validateEmail($email){
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $fail_name = "Email";
+        global $fail;
+        $fail = "Email";
         return false;
     }else{
         return true;
     }
 }
 
-function validatePassword($password){
-    if($password == null || $password == ""){
-        $fail_name = "Password";
+function validatePassword($password, $passwordConfirm){
+    if($password == null || $password == "" || $password != $passwordConfirm){
+        global $fail;
+        $fail = "Password";
         return false;
     }else{
         return true;
@@ -63,6 +65,8 @@ function validatePassword($password){
 }
 
 function userExists($users, $user) {
+    global $fail;
+    $fail = "Duplicate";
     $found = $users->findAll(["email" => $user["email"]]);
     return (count($found) > 0);
 }
