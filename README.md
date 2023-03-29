@@ -44,12 +44,12 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 The game description is in hungarian because this is a school project, I think it's better if every student or teacher can understand it.
 But here's a brief summary of the game:
--On the front page you can choose how many players want to play the game. For now this is only a local game, but I want to add multiplayer later. (Fun game regardless).
+- On the front page you can choose how many players want to play the game. For now this is only a local game, but I want to add multiplayer later. (Fun game regardless).
 The number of players determine the minimum number of treasures. There must be at least one for every player, so for 1 player you can choose from 1 to 24, with 2 players    it increments by 2, so 2-4-6...24, etc etc. 
--If you click on the start game button, you get to the game page. On the navbar you can find the description, login, register, save and exit buttons. I think it's pretty obvious what they do. 
+- If you click on the start game button, you get to the game page. On the navbar you can find the description, login, register, save and exit buttons. I think it's pretty obvious what they do. 
   The game rules:
-    *The board consists of 7x7 (so 49) and one bonus tiles. There are both fixed and randomly generated tiles. Next to every 2nd, 4th and 6th row and column there's an         arrow. With those arrows the player can slide the bonus tile in that row/column. (So the last one in that row/column becomes the bonus one).
+    * The board consists of 7x7 (so 49) and one bonus tiles. There are both fixed and randomly generated tiles. Next to every 2nd, 4th and 6th row and column there's an         arrow. With those arrows the player can slide the bonus tile in that row/column. (So the last one in that row/column becomes the bonus one).
     The player can rotate the bonus tile with the arrows next to it.
-    *The goal is to collect all the treasures on the board, and then get back to the starter tile. The red player has to collect the red treasures, the blue player the blue     treasures and so on.
-    *The first one to collect all and reach the start wins the game.
--The player can register after clicking on the register button. The save feature is only available to registered (and logged in) users. Logged in users are able to load their previously saved games.
+    * The goal is to collect all the treasures on the board, and then get back to the starter tile. The red player has to collect the red treasures, the blue player the          blue treasures and so on.
+    * The first one to collect all and reach the start wins the game.
+- The player can register after clicking on the register button. The save feature is only available to registered (and logged in) users. Logged in users are able to load their previously saved games.
