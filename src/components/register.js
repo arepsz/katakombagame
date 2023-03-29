@@ -74,7 +74,9 @@ class Register extends React.Component {
         password: this.state.password,
         passwordConfirm:  this.state.passwordConfirm
       }
-      axios.post('http://localhost:8000/register.php', obj)
+      let local = 'http://localhost:8000/register.php';
+      let server = 'https://polite-praline-949f1f.netlify.app/reg/register.php'
+      axios.post(server, obj)
       .then(res=> this.handleStatus(res.data))
       .catch(error => {
         console.log(error.response)
