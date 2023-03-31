@@ -75,7 +75,7 @@ class Register extends React.Component {
         passwordConfirm:  this.state.passwordConfirm
       }
       let local = 'http://localhost:8000/register.php';
-      let server = 'https://katakombagame.vercel.app/api/register.php'
+      let server = 'https://katakombagame.herokuapp.com/api/register.php'
       axios.post(server, obj)
       .then(res=> this.handleStatus(res.data))
       .catch(error => {
