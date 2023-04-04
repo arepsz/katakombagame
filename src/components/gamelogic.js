@@ -36,6 +36,8 @@ render() {
 class Board extends React.Component {
     constructor(props) {
      super(props);
+     this.setGame = this.props.setGame.bind(this);
+     this.setLoadedState = this.props.setLoadedState.bind(this);
      this.fixTiles = [
       {
           type: "corner",
@@ -318,7 +320,154 @@ class Board extends React.Component {
        gameStarted: false
      };
     }
+
+    createSaveableState() {
+      let matrix = [];
+      let players = [];
+      for(let i = 0; i < this.state.matrix.length; i++){
+        let row = [];
+        for(let j = 0; j < this.state.matrix[i].length; j++){
+          let matrixElement = {
+            type: this.state.matrix[i][j].type,
+            rotation: this.state.matrix[i][j].rotation,
+            holdsTreasure: this.state.matrix[i][j].holdsTreasure,
+            treasureIsFor: Object.keys(this.state.matrix[i][j].treasureIsFor).length == 0 ? {} : this.state.matrix[i][j].treasureIsFor.id,
+            isroute: false,
+            home: {
+              ishome: this.state.matrix[i][j].home.ishome,
+              playerNumber: this.state.matrix[i][j].home.playerNumber
+            },
+            playersOnTile: this.getPlayerIDs(i, j)
+          }
+          row.push(matrixElement);
+        }
+        matrix.push(row);
+      }
+
+      for(let i = 0; i < this.state.players.length; i++){
+        let playersElement = {
+          id: this.state.players[i].id,
+          playing: this.state.players[i].playing,
+          pLocation: this.playerLocation(this.state.players[i]),
+          home: this.playerHome(this.state.players[i]),
+          howManyTreasures: this.state.players[i].howManyTreasures,
+          color: this.state.players[i].color
+        }
+        players.push(playersElement);
+      }
+
+      let tileOut = {
+        type: this.state.tileOut.type,
+        rotation: this.state.tileOut.rotation,
+        holdsTreasure: this.state.tileOut.holdsTreasure,
+        treasureIsFor: Object.keys(this.state.tileOut.treasureIsFor).length == 0 ? {} : this.state.tileOut.treasureIsFor.id,
+        isroute: false,
+        home: {
+          ishome: false,
+          playerNumber: {}
+        },
+        playersOnTile: []
+      }
+
+      let save = {
+        howManyPlayers: this.state.howManyPlayers,
+        howManyPrizes: this.state.howManyPrizes,
+        pushed: false,
+        matrix: matrix,
+        players: players,
+        tileOut: tileOut
+      }
+
+      this.setGame(save);
+    }
   
+    getPlayerIDs(i,j) {
+      let playerids = [];
+      for(let k = 0; k < this.state.matrix[i][j].playersOnTile.length; k++){
+        playerids.push(this.state.matrix[i][j].playersOnTile[k].id)
+      }
+      return playerids;
+    }
+
+    playerLocation(player) {
+      let location = [];
+      for(let i = 0; i < this.state.matrix.length; i++){
+        for(let j = 0; j < this.state.matrix[i].length; j++){
+          if(this.state.matrix[i][j].playersOnTile.includes(player)){
+            location.push(i, j);
+          }
+        }
+      }
+      return location;
+    }
+
+    loadUpSave(save) {
+      let matrix_change = save.matrix;
+      let players_change = save.players;
+      let tileOut_change = save.tileOut;
+      for(let i = 0; i < matrix_change.length; i++){
+        for(let j = 0; j < matrix_change[i].length; j++){
+          if(matrix_change[i][j].playersOnTile.length > 0){
+            for(let k = 0; k < matrix_change[i][j].playersOnTile.length; k++){
+              matrix_change[i][j].playersOnTile[k] = players_change[matrix_change[i][j].playersOnTile];
+            }
+          }
+          if(Object.keys(matrix_change[i][j].treasureIsFor).length != 0){
+            matrix_change[i][j].treasureIsFor = players_change[Object.keys(matrix_change[i][j].treasureIsFor)[0]];
+          }else{
+            matrix_change[i][j].treasureIsFor = {};
+          }
+        }
+      }
+
+      for(let i = 0; i < players_change.length; i++){
+        if(players_change[i].playing){
+          let location = players_change[i].pLocation;
+          let home = players_change[i].home;
+          players_change[i].pLocation = matrix_change[location[0]][location[1]];
+          players_change[i].home = matrix_change[home[0]][home[1]];
+        }
+      }
+      
+      if(Object.keys(tileOut_change.treasureIsFor).length != 0){
+        tileOut_change.treasureIsFor = players_change[Object.keys(tileOut_change.treasureIsFor)[0]];
+      }
+
+      this.matrixCopy = matrix_change;
+      this.tileRow = 0;
+      this.tileCol = 0;
+      this.allroutesCopy = [];
+
+      this.setState({
+        howManyPlayers: save.howManyPlayers,
+        howManyPrizes: save.howManyPrizes,
+        pushed: false,
+        allRoutes: [],
+        matrix: matrix_change,
+        players: players_change,
+        tileOut: tileOut_change
+      })
+    }
+
+    playerHome(player) {
+      let location = [];
+      switch (player.id) {
+        case 0:
+          location = [0, 0];
+          break;
+        case 1:
+          location = [0, 6];
+          break;
+        case 2:
+          location = [6, 0];
+          break;
+        case 3:
+          location = [6, 6];
+          break;
+      }
+      return location;
+    }
+
     getRandomNum(min, max) {
       return Math.floor(Math.random() * (max-min+1) + min);
     }
@@ -428,6 +577,7 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
+      this.createSaveableState();
     }
   
     slideUp(n){
@@ -449,6 +599,7 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
+      this.createSaveableState();
     }
   
     slideRight(n){
@@ -470,6 +621,7 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
+      this.createSaveableState();
     }
   
     slideLeft(n){
@@ -491,6 +643,7 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
+      this.createSaveableState();
     }
   
     rotatetileRight() {
@@ -1052,7 +1205,7 @@ class Board extends React.Component {
         for (let j = 0; j < 7; j++) {
           rows.push(
             this.renderSquare(
-              this.state.matrix[i][j].type, this.state.matrix[i][j].rotation, squareNumber, i, j, this.state.matrix[i][j]
+              this.state.matrix[i][j].type, this.state.matrix[i][j].rotation, "" + i + j, i, j, this.state.matrix[i][j]
             )
           );
           squareNumber++;
@@ -1142,7 +1295,8 @@ class Board extends React.Component {
         pushed: false,
         matrix: this.matrixCopy,
         players: playersCopy
-      })
+      });
+      this.createSaveableState();
     }
   
     toggleDescription() {
@@ -1170,6 +1324,11 @@ class Board extends React.Component {
         this.setUpHomes();
         this.placeTreasures();
         this.setTileOut();
+        this.createSaveableState();
+      }
+      if(this.props.loadedState){
+        this.loadUpSave(this.props.savedState);
+        this.setLoadedState(false);
       }
       return (
         <div>

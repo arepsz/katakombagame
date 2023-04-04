@@ -23,7 +23,8 @@ if(validateName($name) && validateEmail($email) && validatePassword($password, $
     $save = [
         'name' => $name,
         'email' => $email,
-        'password' => password_hash($password, PASSWORD_DEFAULT)
+        'password' => password_hash($password, PASSWORD_DEFAULT),
+        'save' => []
     ];
     $users->add($save);
 }else{

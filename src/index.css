@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+/*---------------------------------------------------------------------*/
+/* Alap beállítások */
+
 body {
   background: gray;
   position: relative;
@@ -8,18 +11,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.no-spacing {
-  border-spacing: 0;
-  border-collapse: collapse;
-  border: 1px solid black;
-  transform: scale(0.8);
-}
-
-.tileOutTable {
-  border-collapse: collapse;
-  border: 1px solid black;
 }
 
 td {
@@ -36,42 +27,24 @@ img {
   vertical-align: bottom;
 }
 
-.topnav {
-  background-color: rgb(61, 61, 61);
-  overflow: hidden;
-  border-radius: 20px;
-  padding: 5px;
+.hideElements {
+  display: none;
+  margin-left: -500px;
 }
 
-.topnav a {
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 8px 20px;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 25px;
-  margin-right: 15px;
+/*---------------------------------------------------------------------*/
+/* Játék felület, játékosok, kint lévő elem */
+
+.no-spacing {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid black;
+  transform: scale(0.8);
 }
 
-.topnav #exit {
-  background-color:rgb(225, 128, 128);
-  color: black;
-  margin-right: 0px;
-}
-
-.topnav #exit:hover {
-  background-color:rgb(225, 128, 128);
-  color: white;
-}
-
-.topnav a:hover {
-  background-color: gray;
-  color: black;
-}
-
-.topnav #description {
-  float: left;
+.tileOutTable {
+  border-collapse: collapse;
+  border: 1px solid black;
 }
 
 .Player p {
@@ -293,6 +266,50 @@ img {
   transition: all .2s ease-in-out;
 }
 
+/*---------------------------------------------------------------------*/
+/* TOPNAV */
+
+.topnav {
+  background-color: rgb(61, 61, 61);
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+.topnav #exit {
+  background-color:rgb(225, 128, 128);
+  color: black;
+  margin-right: 0px;
+}
+
+.topnav #exit:hover {
+  background-color:rgb(225, 128, 128);
+  color: white;
+}
+
+.topnav a:hover {
+  background-color: gray;
+  color: black;
+}
+
+.topnav #description {
+  float: left;
+}
+
+/*---------------------------------------------------------------------*/
+/* Felugró ablakok alap beállításai */
+
 .react-confirm-alert-overlay {
   background: rgba(128, 128, 128, 0.9) !important;
 }
@@ -324,33 +341,7 @@ img {
   overflow: scroll;
 }
 
-.custom-ui-register {
-  width: 85%;
-  text-align: justify;
-  margin: auto;
-  background: rgb(60, 60, 60);
-  color: rgb(194, 194, 194);
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.13);
-  overflow: scroll;
-}
-
 .custom-ui button {
-  outline: none;
-  background: rgb(101, 101, 101);
-  border: none;
-  display: inline-block;
-  padding: 6px 18px;
-  color: #eee;
-  margin-right: 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.custom-ui-register button {
   outline: none;
   background: rgb(101, 101, 101);
   border: none;
@@ -404,10 +395,8 @@ img {
   cursor: pointer;
 }
 
-.hideElements {
-  display: none;
-  margin-left: -500px;
-}
+/*---------------------------------------------------------------------*/
+/* Kezdőoldal */
 
 .options {
   display: grid;
@@ -466,114 +455,6 @@ img {
   justify-content: center;
   align-items: center;
   opacity: 0.6;
-}
-
-.register {
-  display: grid;
-  text-align: justify;
-  padding: 15px;
-  margin-left: 5px;
-}
-
-.login_field {
-  padding: 10px 0px;
-  display: flex;
-  position: relative;
-  min-width: 0;
-}
-
-.register input {
-  border: none;
-	border-bottom: 2px solid #D1D1D4;
-	background: none;
-  padding-left: 24px;
-  color: white
-}
-
-.register-input-red {
-  border-bottom: 2px solid #800020 !important;
-}
-
-.custom-ui-register h1 {
-  text-align: center;
-}
-
-.register-images {
-  max-width: 20px;
-  max-height: 20px;
-  color: white;
-  position: absolute;
-  top: 10px;
-  left: 2px;
-}
-
-.register button {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 95%;
-}
-
-.register-message-green {
-  text-align: center;
-  color: green;
-  
-}
-
-.register-message-red {
-  text-align: center;
-  color: red;
-}
-
-.error-message-red {
-  padding: 0;
-  margin-top: 0;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: red;
-  width: 75%;
-  font-size: 0.9rem;
-}
-
-.custom-ui-register-button {
-  background: rgb(225, 128, 128) !important;
-  color: black !important;
-}
-
-.custom-ui-register-button:hover {
-  background: rgb(225, 128, 128) !important;
-  color: white !important;
-}
-
-.register-button {
-  background: #caaa58 !important;
-  color: black !important;
-}
-
-.register-button:hover {
-  color: white !important;
-}
-
-#middle {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-#start_button {
-  margin-left: 2px;
-}
-
-#title {
-  text-align: center;
-  font-family: cursive;
-  font-size: 9vh;
-  margin-bottom: 0;
-}
-
-#selfpromo {
-  text-align: center;
-  font-family: cursive;
-  margin-top: 0;
 }
 
 #choose {
@@ -640,7 +521,211 @@ img {
   top: 49%;
 }
 
+#middle {
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
+#start_button {
+  margin-left: 2px;
+}
+
+#title {
+  text-align: center;
+  font-family: cursive;
+  font-size: 9vh;
+  margin-bottom: 0;
+}
+
+#selfpromo {
+  text-align: center;
+  font-family: cursive;
+  margin-top: 0;
+}
+
+/*---------------------------------------------------------------------*/
+/* Regisztráció, Bejelentkezés, Mentés */
+
+.custom-ui-register {
+  width: 85%;
+  text-align: justify;
+  margin: auto;
+  background: rgb(60, 60, 60);
+  color: rgb(194, 194, 194);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.13);
+  overflow: scroll;
+}
+
+.custom-ui-register button {
+  outline: none;
+  background: rgb(101, 101, 101);
+  border: none;
+  display: inline-block;
+  padding: 6px 18px;
+  color: #eee;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.register input {
+  border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+  padding-left: 24px;
+  color: white
+}
+
+.register {
+  display: grid;
+  text-align: justify;
+  padding: 15px;
+  margin-left: 5px;
+}
+
+.register-input-red {
+  border-bottom: 2px solid #800020 !important;
+}
+
+.custom-ui-register h1 {
+  text-align: center;
+}
+
+.register-images {
+  max-width: 20px;
+  max-height: 20px;
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 2px;
+}
+
+.register button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 95%;
+}
+
+.register-message-green {
+  text-align: center;
+  color: green;
+  
+}
+
+.register-message-red {
+  text-align: center;
+  color: red;
+}
+
+.custom-ui-register-button {
+  background: rgb(225, 128, 128) !important;
+  color: black !important;
+}
+
+.custom-ui-register-button:hover {
+  background: rgb(225, 128, 128) !important;
+  color: white !important;
+}
+
+.register-button {
+  background: #caaa58 !important;
+  color: black !important;
+}
+
+.register-button:hover {
+  color: white !important;
+}
+
+.login_field {
+  padding: 10px 0px;
+  display: flex;
+  position: relative;
+  min-width: 0;
+}
+
+.user-name{
+  float: right;
+  margin: 0;
+  font-size: 1rem;
+  padding-top: 7px;
+  padding-right: 15px;
+  color: #caaa58;
+}
+
+.error-message-red {
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+  width: 75%;
+  font-size: 0.9rem;
+}
+
+.save-buttons {
+  display: grid;
+}
+
+.save {
+  width: 350px !important;
+}
+
+.save-name-block {
+  display: flex;
+}
+
+.savediv {
+  width: 220px;
+}
+
+.save-check {
+  width: 30px !important;
+  height: 30px !important;
+  margin-left: 12px;
+}
+
+.save-x {
+  margin-top: 5px;
+  width: 25px !important;
+  height: 25px !important;
+  margin-left: 12px;
+}
+
+.saved-game-div {
+  display: flex;
+  position: relative;
+  margin-left: 85px;
+}
+
+.save-images {
+  top: 30px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.saved-game-text{
+  margin-left: 50px;
+}
+
+.saved-games-back {
+  width: 25px;
+  height: 25px;
+}
+
+.disabled{
+  pointer-events: none;
+  background: #c9b279 !important;
+}
+
+
+/*---------------------------------------------------------------------*/
+/* Media-query */
 
 @media screen and (max-width: 700px) {
   #background {
@@ -723,3 +808,5 @@ img {
     width: 60px;
   }
 }
+
+/*---------------------------------------------------------------------*/

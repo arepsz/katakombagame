@@ -1,14 +1,1362 @@
 {
-    "642353c8b235a": {
+    "642c876da90b7": {
         "name": "asd",
         "email": "asd@asd.com",
-        "password": "$2y$10$a3tCBlcXR8Zt\/IMHYPnjyugHUsJagsjPuSIIVqx38SNzzuclhAnSm",
-        "id": "642353c8b235a"
-    },
-    "642359e6f1a77": {
-        "name": "asd",
-        "email": "asd@gmail.com",
-        "password": "$2y$10$kv1glSQj.z.3UYwKI6nXW.SR8NnDrvSPOgVH6TdjFLQQEukl93uMq",
-        "id": "642359e6f1a77"
+        "password": "$2y$10$e55OYRkBrpLoSyVaMdeJ4ubDz0wUJ3j\/7GnrubcN.La0inC9bw.iy",
+        "save": [
+            {
+                "save-date": "2023\/04\/04",
+                "save-name": "asd",
+                "game-state": {
+                    "howManyPlayers": 1,
+                    "howManyPrizes": 1,
+                    "pushed": false,
+                    "matrix": [
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": true,
+                                    "playerNumber": 0
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": [
+                                    0
+                                ]
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "straight",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ]
+                    ],
+                    "players": [
+                        {
+                            "id": 0,
+                            "playing": true,
+                            "pLocation": [
+                                1,
+                                5
+                            ],
+                            "home": [
+                                0,
+                                0
+                            ],
+                            "howManyTreasures": 1,
+                            "color": "#0096FF"
+                        },
+                        {
+                            "id": 1,
+                            "playing": false,
+                            "pLocation": [],
+                            "home": [
+                                0,
+                                6
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#32CD32"
+                        },
+                        {
+                            "id": 2,
+                            "playing": false,
+                            "pLocation": [],
+                            "home": [
+                                6,
+                                0
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#800020"
+                        },
+                        {
+                            "id": 3,
+                            "playing": false,
+                            "pLocation": [],
+                            "home": [
+                                6,
+                                6
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#9932CC"
+                        }
+                    ],
+                    "tileOut": {
+                        "type": "corner",
+                        "rotation": 180,
+                        "holdsTreasure": false,
+                        "treasureIsFor": [],
+                        "isroute": false,
+                        "home": {
+                            "ishome": false,
+                            "playerNumber": []
+                        },
+                        "playersOnTile": []
+                    }
+                }
+            },
+            {
+                "save-date": "2023\/04\/04",
+                "save-name": "ooo",
+                "game-state": {
+                    "howManyPlayers": 1,
+                    "howManyPrizes": 1,
+                    "pushed": false,
+                    "matrix": [
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": true,
+                                    "playerNumber": 0
+                                },
+                                "playersOnTile": [
+                                    0
+                                ]
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "straight",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 0,
+                                "holdsTreasure": true,
+                                "treasureIsFor": 0,
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ],
+                        [
+                            {
+                                "type": "corner",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 0,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 90,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "threeway",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "straight",
+                                "rotation": 270,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            },
+                            {
+                                "type": "corner",
+                                "rotation": 180,
+                                "holdsTreasure": false,
+                                "treasureIsFor": [],
+                                "isroute": false,
+                                "home": {
+                                    "ishome": false,
+                                    "playerNumber": []
+                                },
+                                "playersOnTile": []
+                            }
+                        ]
+                    ],
+                    "players": [
+                        {
+                            "id": 0,
+                            "playing": true,
+                            "pLocation": [
+                                0,
+                                0
+                            ],
+                            "home": [
+                                0,
+                                0
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#0096FF"
+                        },
+                        {
+                            "id": 1,
+                            "playing": false,
+                            "pLocation": [],
+                            "home": [
+                                0,
+                                6
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#32CD32"
+                        },
+                        {
+                            "id": 2,
+                            "playing": false,
+                            "pLocation": [],
+                            "home": [
+                                6,
+                                0
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#800020"
+                        },
+                        {
+                            "id": 3,
+                            "playing": false,
+                            "pLocation": [],
+                            "home": [
+                                6,
+                                6
+                            ],
+                            "howManyTreasures": 0,
+                            "color": "#9932CC"
+                        }
+                    ],
+                    "tileOut": {
+                        "type": "threeway",
+                        "rotation": 0,
+                        "holdsTreasure": false,
+                        "treasureIsFor": [],
+                        "isroute": false,
+                        "home": {
+                            "ishome": false,
+                            "playerNumber": []
+                        },
+                        "playersOnTile": []
+                    }
+                }
+            }
+        ],
+        "id": "642c876da90b7"
     }
 }
