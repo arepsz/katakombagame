@@ -331,7 +331,7 @@ class Board extends React.Component {
             type: this.state.matrix[i][j].type,
             rotation: this.state.matrix[i][j].rotation,
             holdsTreasure: this.state.matrix[i][j].holdsTreasure,
-            treasureIsFor: Object.keys(this.state.matrix[i][j].treasureIsFor).length == 0 ? {} : this.state.matrix[i][j].treasureIsFor.id,
+            treasureIsFor:  Object.keys(this.state.matrix[i][j].treasureIsFor).length === 0 ? {} : this.state.matrix[i][j].treasureIsFor.id,
             isroute: false,
             home: {
               ishome: this.state.matrix[i][j].home.ishome,
@@ -360,7 +360,7 @@ class Board extends React.Component {
         type: this.state.tileOut.type,
         rotation: this.state.tileOut.rotation,
         holdsTreasure: this.state.tileOut.holdsTreasure,
-        treasureIsFor: Object.keys(this.state.tileOut.treasureIsFor).length == 0 ? {} : this.state.tileOut.treasureIsFor.id,
+        treasureIsFor: Object.keys(this.state.tileOut.treasureIsFor).length === 0 ? {} : this.state.tileOut.treasureIsFor.id,
         isroute: false,
         home: {
           ishome: false,
@@ -412,8 +412,8 @@ class Board extends React.Component {
               matrix_change[i][j].playersOnTile[k] = players_change[matrix_change[i][j].playersOnTile];
             }
           }
-          if(Object.keys(matrix_change[i][j].treasureIsFor).length != 0){
-            matrix_change[i][j].treasureIsFor = players_change[Object.keys(matrix_change[i][j].treasureIsFor)[0]];
+          if(matrix_change[i][j].treasureIsFor !== {}){
+            matrix_change[i][j].treasureIsFor = players_change[matrix_change[i][j].treasureIsFor];
           }else{
             matrix_change[i][j].treasureIsFor = {};
           }
@@ -429,7 +429,7 @@ class Board extends React.Component {
         }
       }
       
-      if(Object.keys(tileOut_change.treasureIsFor).length != 0){
+      if(Object.keys(tileOut_change.treasureIsFor).length !== 0){
         tileOut_change.treasureIsFor = players_change[Object.keys(tileOut_change.treasureIsFor)[0]];
       }
 
@@ -577,7 +577,6 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
-      this.createSaveableState();
     }
   
     slideUp(n){
@@ -599,7 +598,6 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
-      this.createSaveableState();
     }
   
     slideRight(n){
@@ -621,7 +619,6 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
-      this.createSaveableState();
     }
   
     slideLeft(n){
@@ -643,7 +640,6 @@ class Board extends React.Component {
           tileOut: helper
         }
       );
-      this.createSaveableState();
     }
   
     rotatetileRight() {
@@ -653,6 +649,7 @@ class Board extends React.Component {
           tileOutCopy.rotation = 0;
       }
       this.setState({tileOut: tileOutCopy});
+      this.createSaveableState();
     }
   
     rotatetileLeft() {
@@ -662,6 +659,7 @@ class Board extends React.Component {
           tileOutCopy.rotation = 270;
       }
       this.setState({tileOut: tileOutCopy});
+      this.createSaveableState();
     }
   
     setUpHomes() {
@@ -761,7 +759,7 @@ class Board extends React.Component {
       for(let i = 0; i < this.state.howManyPlayers; i++){
         if(this.state.players[i].howManyTreasures === this.state.howManyPrizes / this.state.howManyPlayers && this.state.players[i].pLocation === this.state.players[i].home){
           confirmAlert({
-            title: 'Nyert a ' + this.state.players[i].id + 1 + ". játékos!",
+            title: 'Nyert a(z) ' + (this.state.players[i].id + 1) + ". játékos!",
             message: 'Kiléphet a kezdőoldalra, vagy újrakezdheti a játékot a meglévő beállításokkal.',
             buttons: [
               {
@@ -1042,13 +1040,11 @@ class Board extends React.Component {
   
     getPlayersLocation() {
       let cell = this.state.players[this.state.currentPlayer].pLocation;
-      console.log(this.state.players[this.state.currentPlayer].pLocation);
       for(let i = 0; i < this.state.matrix.length; i++){
           for(let j = 0; j < this.state.matrix[i].length; j++){
               if(this.state.matrix[i][j] === cell){
                   this.tileRow = i;
                   this.tileCol = j;
-                  console.log(this.tileRow, this.tileCol);
               }
           }
         }
@@ -1074,6 +1070,7 @@ class Board extends React.Component {
       }
       this.getPlayersLocation();
       this.getAllRoutes(this.tileRow, this.tileCol);
+      this.createSaveableState();
     }
   
     increase() {
@@ -1179,10 +1176,10 @@ class Board extends React.Component {
       for(let i = 0, nthCounter = 1; i < 9; i++){
         if(i === 2 || i === 4 || i === 6){
           firstrow.push(
-            this.renderArrow("down", i, nthCounter)
+            this.renderArrow("down", "downarrow" + i, nthCounter)
           );
           lastrow.push(
-            this.renderArrow("up", i, nthCounter)
+            this.renderArrow("up", "uparrow" + i, nthCounter)
           );
           nthCounter += 2;
         }
@@ -1198,7 +1195,7 @@ class Board extends React.Component {
       board.push(this.renderRows(firstrow));
       for (let i = 0, squareNumber = 0; i < 7; i++) {
         if(i === 1 || i === 3 || i === 5){
-          rows.push(this.renderArrow("right",i, arrowColumnCounter));
+          rows.push(this.renderArrow("right","rightarrow" + i, arrowColumnCounter));
         }else{
           rows.push(this.renderSquareBlank("blank","",i,"blank","blank"));
         }
@@ -1211,10 +1208,10 @@ class Board extends React.Component {
           squareNumber++;
         }
         if(i === 1 || i === 3 || i === 5){
-          rows.push(this.renderArrow("left",i, arrowColumnCounter));
+          rows.push(this.renderArrow("left","leftarrow" + i, arrowColumnCounter));
           arrowColumnCounter+=2;
         }else{
-          rows.push(this.renderSquareBlank("blank","",i,"blank","blank"));
+          rows.push(this.renderSquareBlank("blank","","blank" + i,"blank","blank"));
         }
         board.push(this.renderRows(rows));
         rows = [];

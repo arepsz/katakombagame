@@ -15,6 +15,7 @@ function Save({user, game, setSavedState, setLoadedState}) {
     const [games, setGames] = useState([]);
     const [error, setError] = useState("");
     const [saved, setSaved] = useState(false);
+    const [noGames, setNoGames] = useState(false);
     const [showMessage, setShowMessage] = useState(false);
     const [showGames, setShowGames] = useState(false);
 
@@ -34,6 +35,7 @@ function Save({user, game, setSavedState, setLoadedState}) {
     };
 
     const handleStatusLoad = (json) => {
+        setShowMessage(false);
         setNameInput(false);
         if(json['status'] = 400){
             setGames(json['saves']);
@@ -41,6 +43,22 @@ function Save({user, game, setSavedState, setLoadedState}) {
         }else{
             setError(json['error']);
             setShowGames(false);
+        }
+    }
+
+    const handleStatusDelete = (json, i) => {
+        console.log(json);
+        if(json['status'] == 400){
+            let newGames = games;
+            newGames.splice(i, 1);
+            setGames(newGames);
+            if(games.length == 0){
+                setNoGames(true);
+            }else{
+                setNoGames(false);
+            }
+        }else{
+            setError(json['error']);
         }
     }
 
@@ -54,14 +72,19 @@ function Save({user, game, setSavedState, setLoadedState}) {
                         <p>{games[i]['save-name']}</p>
                         <p>{games[i]['save-date']}</p>
                     </div>
+                    <FontAwesomeIcon icon={faX} style={{color: "#a51d2d"}} className="save-images x" onClick={() => deleteGame(games[i], i)}/>
                 </div>
             )
         }
         return (
-            <div className="saved-games">
-                <FontAwesomeIcon icon={faArrowLeft} style={{color: "rgb(225, 128, 128)"}} className="saved-games-back" onClick={hideGames}/>
-                {outArray}
-            </div>
+            <>
+            <FontAwesomeIcon icon={faArrowLeft} style={{color: "rgb(225, 128, 128)"}} className="saved-games-back" onClick={hideGames}/>
+            {noGames == false ? 
+                <div className="saved-games">
+                    {outArray}
+                </div> :
+            <p className={"error-message-red"}>Nincs megjeleníthető mentés!</p>}
+            </>
         )
     }
 
@@ -70,12 +93,24 @@ function Save({user, game, setSavedState, setLoadedState}) {
         setSavedState(game_state);
     }
 
+    const deleteGame = (game, i) => {
+        const obj = {
+            email: email,
+            game: game,
+            task: "delete"
+        }
+        axios.post('http://localhost:8000/save.php', obj)
+        .then(res=> handleStatusDelete(res.data, i))
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
     const closeBox = () => {
         setNameInput(false);
     }
     
     const onSubmitSave = (e) => {
-        console.log(game);
         e.preventDefault();
         const obj = {
             name: saveName,
@@ -108,6 +143,7 @@ function Save({user, game, setSavedState, setLoadedState}) {
     };
 
     const toggleName = () => {
+        setShowMessage(false);
         setNameInput(true);
     }
 
@@ -121,6 +157,9 @@ function Save({user, game, setSavedState, setLoadedState}) {
                 ''}
             {error === "exists" ? 
                 <p className={"error-message-red"}>Ezt a játékállást már elmentette egyszer!</p> :
+                ''}
+            {error === "delete" ? 
+                <p className={"error-message-red"}>Nem sikerült törölni a mentést!</p> :
                 ''}
             {nameInput ? 
                 <div className="save-name-block">

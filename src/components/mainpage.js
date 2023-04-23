@@ -20,7 +20,6 @@ function Game() {
 
     useEffect(() => {
       const onStorage = () => {
-        console.log('changed');
         setToggleLogoff(localStorage.getItem('user-name') === "" ? true : false);
       };
   
@@ -34,12 +33,10 @@ function Game() {
     const changePlayer = (event) => {
         setPlayers(event.target.value);
         setTreasures(event.target.value);
-        console.log("p.changed");
     };
     
     const changeTreasure = (event) => {
         setTreasures(event.target.value);
-        console.log("t.changed");
     };
 
     const selectPlayers = () => {
@@ -219,7 +216,7 @@ function Game() {
           return (
             <div className={"game-board " + pickingCSS("board")}>
                 {renderTopNav()}
-                <Board players={players} treasures={treasures} setGame={setGame} loadedState={loadedState} setLoadedState={setLoadedState} savedState={savedState}/>
+                <Board players={players} treasures={treasures} game={game} setGame={setGame} loadedState={loadedState} setLoadedState={setLoadedState} savedState={savedState}/>
             </div>
           )
         }

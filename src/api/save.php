@@ -1,9 +1,9 @@
 <?php
-include('storage.php');
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
 header("Content-type:application/json");
+include('storage.php');
 ini_set('display_errors', 1);
 $users = new Storage(new JsonIO('data/userdata.json'));
 $request = json_decode(file_get_contents("php://input"),true);
@@ -11,8 +11,10 @@ $fail = "";
 
 if($request['task'] == "save"){
     handleSave($request, $users);
-}else{
+}elseif($request['task'] == "load"){
     handleLoad($request, $users);
+}else{
+    handleDelete($request, $users);
 }
 
 function handleSave($request, $users){
@@ -27,12 +29,10 @@ function handleSave($request, $users){
     ];
     $update = $found;
     $exists = false;
-    if(count($found['save']) > 0){
-        for ($x = 0; $x < count($found['save']); $x++) {
-            $found_save = $found['save'];
-            if($found_save[$x] == $new_save){
-                $exists = true;
-            }
+    for ($x = 0; $x < count($found['save']); $x++) {
+        $found_save = $found['save'];
+        if($found_save[$x]['save-name'] == $new_save['save-name'] || $found_save[$x]['game-state'] == $new_save['game-state']){
+            $exists = true;
         }
     }
     if(!$exists){
@@ -57,5 +57,33 @@ function handleLoad($request, $users){
         'status' => 400,
         'saves' => $saves
     ]);
+}
+
+function handleDelete($request, $users){
+    $email = $request['email'];
+    $gameToDelete = $request['game'];
+    $exists = false;
+    $found = $users->findOne(["email" => $email]);
+    $update = [];
+    for ($x = 0; $x < count($found['save']); $x++) {
+        $found_save = $found['save'];
+        if($found_save[$x] != $gameToDelete){
+            array_push($update, $found_save[$x]);
+        }else{
+            $exists = true;
+        }
+    }
+    $found['save'] = $update;
+    if($exists){
+        $users->update($found['id'], $found);
+        echo json_encode([
+            'status' => 400
+        ]);
+    }else{
+        echo json_encode([
+            'status' => 404,
+            'error' => 'delete'
+        ]);
+    }
 }
 ?>
