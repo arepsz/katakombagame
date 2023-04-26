@@ -36,7 +36,7 @@ if(validateName($name) && validateEmail($email) && validatePassword($password, $
 }
 
 function validateName($name){
-    if($name == null || $name == ""){
+    if($name == null || $name == "" || count($name) > 50){
         global $fail;
         $fail = "Name";
         return false;
@@ -56,7 +56,7 @@ function validateEmail($email){
 }
 
 function validatePassword($password, $passwordConfirm){
-    if($password == null || $password == "" || $password != $passwordConfirm){
+    if($password == null || $password == "" || $password != $passwordConfirm || count($password) > 30){
         global $fail;
         $fail = "Password";
         return false;

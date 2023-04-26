@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+
+/*---------------------------------------------------------------------*/
+/* Ezt csak a kész appban hagyom benne, eltünteti a hiba overlayt */
+iframe {
+  display: none;
+}
+/* Hibaoldal */
+.error-boundary {
+  text-align: center;
+  margin-top: 10%;
+  font-size: 1.2rem;
+  z-index: 100;
+}
+.hideEverything {
+  display: none;
+}
 /*---------------------------------------------------------------------*/
 /* Alap beállítások */
 

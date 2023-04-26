@@ -91,6 +91,7 @@ function Save({user, game, setSavedState, setLoadedState}) {
     const loadGame = (game_state) => {
         setLoadedState(true);
         setSavedState(game_state);
+        setShowGames(false);
     }
 
     const deleteGame = (game, i) => {
