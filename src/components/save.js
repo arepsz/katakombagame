@@ -62,6 +62,8 @@ function Save({user, game, setSavedState, setLoadedState}) {
         }
     }
 
+    //ez a függvény jeleníti meg a játékokat a betöltési menüben
+    //a fontAwesome ikonokat az oldalukon lehet látni, illetve azt is, hogy milyen néven kell importálni
     const renderGames = () => {
         let outArray = [];
         for(let i = 0; i < games.length; i++){
@@ -88,6 +90,8 @@ function Save({user, game, setSavedState, setLoadedState}) {
         )
     }
 
+    //beállítja a megfelelő horgokat ha betöltöttük a játékot
+    //illetve visszalép a menü alap ablakába
     const loadGame = (game_state) => {
         setLoadedState(true);
         setSavedState(game_state);

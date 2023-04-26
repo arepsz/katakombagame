@@ -24,6 +24,9 @@ function Login({trigger, setTrigger}) {
     const handleStatus = (json) => {
       let error = "";
       let success = false;
+      //csak ezt a két státuszt küldheti vissza a php
+      //ha nem ez a kód jön, akkor az nem is ebben az objektumban fog látszódni
+      //illetve abban az esetben valami komolyabb hiba történt
       if(json['status'] === 400) {
         localStorage.setItem('user-name', json['name']);
         localStorage.setItem('user-email', json['email']);
@@ -44,6 +47,7 @@ function Login({trigger, setTrigger}) {
         email:  email,
         password: password
       }
+      //a visszaérkező json-nek a data tagját kell átadni a függvénynek, egyébként nem lehetne feldolgozni
       axios.post('http://localhost:8000/login.php', obj)
       .then(res=> handleStatus(res.data))
       .catch(error => {

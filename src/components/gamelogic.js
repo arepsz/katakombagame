@@ -1,6 +1,9 @@
 import React from 'react';
 import { confirmAlert } from 'react-confirm-alert';
 
+//Komponens a játékban megjelenő kockákhoz, nyilakhoz és játékos képekhez
+//Így újra felhasználható, ha létre akarunk hozni egyet akkor pl. a <Square/> szintaxissal lehet
+//De kellenek hozzájuk a propok, ezzel lesznek beállítva a nevek, meg hogy hol a kép hozzá
 class Square extends React.Component {
     render() {
       return (
@@ -36,6 +39,7 @@ render() {
 class Board extends React.Component {
     constructor(props) {
      super(props);
+     //setGame és setLoadedState a mainpageből jön le, kell a mentéshez és betöltéshez
      this.setGame = this.props.setGame.bind(this);
      this.setLoadedState = this.props.setLoadedState.bind(this);
      this.fixTiles = [
@@ -381,6 +385,7 @@ class Board extends React.Component {
       this.setGame(save);
     }
   
+    //ez a két függvény nem "szükséges" de megkönnyíti a mentés létrehozását
     getPlayerIDs(i,j) {
       let playerids = [];
       for(let k = 0; k < this.state.matrix[i][j].playersOnTile.length; k++){
@@ -493,6 +498,7 @@ class Board extends React.Component {
       let n1 = 13;
       let n2 = 15;
       let n3 = 6;
+      //mivel minden random kockából meg van adva hogy mennyi lehet, ezért muszáj közben levonogatni
       while(n1 > 0 || n2 > 0 || n3 > 0){
           let tile = this.getRandomTile()
           if(tile.type === "straight" && n1 > 0){
@@ -509,7 +515,10 @@ class Board extends React.Component {
           }
       }
     }
-  
+    
+    //ez a függvény hozza létre a mátrixot
+    //igazából minden páratlan sor minden páratlan eleme lesz fix kocka
+    //a többi mind random, ezért van a i%2 és j%2
     generateBoard() {
       this.setState({gameStarted: true});
       this.getAllRandomTiles();
@@ -540,6 +549,8 @@ class Board extends React.Component {
           while (tres > 0) {
               let col = this.getRandomNum(0, 6);
               let row = this.getRandomNum(0, 6);
+              //nem lehet kincs a négy sarokban, az úgy nyílván túl egyszerű lenne a játékosoknak
+              //ezeket ki kell hagyni
               if ((this.matrixCopy[col][row] !== this.matrixCopy[0][0]) && (this.matrixCopy[col][row] !== this.matrixCopy[0][6]) && (this.matrixCopy[col][row] !== this.matrixCopy[6][0]) && (this.matrixCopy[col][row] !== this.matrixCopy[6][6])) {
                   if (this.matrixCopy[col][row].holdsTreasure === false) {
                       this.matrixCopy[col][row].holdsTreasure = true;
@@ -682,6 +693,8 @@ class Board extends React.Component {
     getAllRoutes(n,m){
       this.allroutesCopy.push(this.state.matrix[n][m]);
       this.matrixCopy[n][m].isroute = true;
+      //ez a lista nem ugyan az, mint ami a legmélyebbi ifben van, ez csak a [n][m] elemhez tartozó
+      //irányokat tartalmazza
       let array = this.directionOfTiles[this.state.matrix[n][m].type][this.state.matrix[n][m].rotation]
       for(let i = 0; i < array.length; i++){
           if(array[i] === "up"){
@@ -723,6 +736,7 @@ class Board extends React.Component {
       });
     }
   
+    //ki kell törölni az elérhető routokat hogy normálisan fusson az útkeresés
     clearRoutes() {
       for(let i = 0; i < this.state.matrix.length; i++){
         for(let j =0; j < this.state.matrix[i].length; j++){
@@ -755,6 +769,9 @@ class Board extends React.Component {
       })
     }
   
+    //ha megnyeri valamelyik játékos a játékot, feldobja a felugró ablakot
+    //itt is a confirmAlert csomagot használtam, viszont itt az alap ablakot,
+    //tehát nem sajátot hoztam létre
     checkIfWin() {
       for(let i = 0; i < this.state.howManyPlayers; i++){
         if(this.state.players[i].howManyTreasures === this.state.howManyPrizes / this.state.howManyPlayers && this.state.players[i].pLocation === this.state.players[i].home){
@@ -776,6 +793,8 @@ class Board extends React.Component {
       }
     }
   
+    //sajnos ez muszáj az újrakezdéshez, deepcopyzni körülményes lenne az összes objektumot
+    //sok helyet foglal de tulajdonképpen csak ki kellett másolni
     resetGame() {
       this.matrixCopy = []
       this.tileRow = 0
@@ -1038,6 +1057,8 @@ class Board extends React.Component {
       })
     }
   
+    //ez az éppen aktuális játékos helyét keresi meg
+    //szükséges a lépéshez, erre lesz az útkeresés futtatva
     getPlayersLocation() {
       let cell = this.state.players[this.state.currentPlayer].pLocation;
       for(let i = 0; i < this.state.matrix.length; i++){
@@ -1167,6 +1188,11 @@ class Board extends React.Component {
       return <Player nth={n} element={text} highlight={highlight} treasures={this.state.players[i-1].howManyTreasures} maxTreasures={this.state.howManyPrizes / this.state.howManyPlayers}/>;
     }
   
+    //ez a függvény bonyolultra sikerült, de igazából csak rétegekre van bontva
+    //a teljes felület ugyebár nem 7x7 hanem 9x9, mivel van még egy külső sáv a nyilaknak
+    //a függvény először megcsinálja a felső sort
+    //ezután jön a 7 sornyi játékfelület, ebben van egy nyíl (vagy üres elem), a hét mátrixelem és mégegy nyíl (vagy üres)
+    //legvégül pedig az utolsó sor, ami megint üres elem és nyíl váltakozva
     renderBoard() {
       let board = [];
       let rows = [];
@@ -1296,6 +1322,8 @@ class Board extends React.Component {
       this.createSaveableState();
     }
   
+    //itt már a confirmAlert "saját" ablakát használom, ebben saját magunknak kell
+    //létrehozni az elemeket és saját CSS is kell hozzá
     toggleDescription() {
       confirmAlert({
         customUI: ({ onClose }) => {
@@ -1323,6 +1351,7 @@ class Board extends React.Component {
         this.setTileOut();
         this.createSaveableState();
       }
+      //ha nem használnánk ifeket és csak futna, akkor lehalna a végtelen ismétlés miatt
       if(this.props.loadedState){
         this.loadUpSave(this.props.savedState);
         this.setLoadedState(false);

@@ -5,6 +5,7 @@ class ErrorBoundary extends Component {
     hasError: false,
   }
 
+  //Nem kell bele más, elég ha elkapja a hibát
   static getDerivedStateFromError() {
     return { hasError: true }
   }
